@@ -1,0 +1,319 @@
+/* Variables de color elegante */
+:root {
+  --gold-elegant: #C9A961;
+  --gold-dark: #B8964E;
+  --gold-light: #D4B677;
+}
+
+/* Estilos para los carruseles de imágenes */
+
+.services-section {
+  padding: var(--spacing-4xl) 0;
+  background-color: var(--color-bg-secondary);
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: var(--spacing-3xl);
+}
+
+.services-title {
+  font-size: var(--font-size-4xl);
+  color: var(--gold-elegant);
+  margin-bottom: var(--spacing-md);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 4px 10px rgba(201, 169, 97, 0.2);
+  text-align: center;
+}
+
+.services-description {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  max-width: var(--max-width-md);
+  margin: 0 auto;
+}
+
+/* Header dorado elegante */
+.service-carousel {
+  margin-bottom: var(--spacing-4xl);
+  padding: 40px 0;
+  background: linear-gradient(135deg, rgba(20, 20, 30, 0.95) 0%, rgba(15, 15, 25, 0.98) 100%);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.service-carousel:last-child {
+  margin-bottom: 0;
+}
+
+.service-carousel-header {
+  padding: 0 60px 30px 60px;
+  border-bottom: 2px solid rgba(201, 169, 97, 0.15);
+  margin-bottom: var(--spacing-xl);
+}
+
+.service-carousel-title-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.service-carousel-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.service-carousel-icon {
+  font-size: 50px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 6px rgba(201, 169, 97, 0.2));
+}
+
+.service-carousel-description {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+  line-height: 1.6;
+  max-width: 800px;
+}
+
+.carousel-container {
+  position: relative;
+  padding: 0 var(--spacing-lg);
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--gold-elegant);
+  color: var(--color-primary);
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(201, 169, 97, 0.25);
+}
+
+.carousel-button:hover {
+  background-color: var(--gold-light);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(201, 169, 97, 0.35);
+}
+
+.carousel-button-prev {
+  left: 0;
+}
+
+.carousel-button-next {
+  right: 0;
+}
+
+/* Carrusel con deslizamiento suave e infinito */
+.carousel-viewport {
+  overflow: hidden;
+  margin: 0 60px;
+}
+
+.carousel-track {
+  display: flex;
+  will-change: transform;
+}
+
+/* Transición suave solo cuando se está moviendo */
+.carousel-track.transitioning {
+  transition: transform 0.7s ease-in-out;
+}
+
+.carousel-slide {
+  flex: 0 0 33.333%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.carousel-slide-content {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 4/3;
+  transition: all 0.3s ease;
+}
+
+.carousel-slide-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(201, 169, 97, 0.3);
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.carousel-slide-content:hover img {
+  transform: scale(1.05);
+}
+
+.carousel-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-slide-content:hover .carousel-image-overlay {
+  opacity: 1;
+}
+
+.carousel-zoom-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.carousel-image-title {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: var(--spacing-lg);
+  padding: 0 var(--spacing-lg);
+}
+
+.carousel-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.carousel-indicator:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.1);
+}
+
+.carousel-indicator.active {
+  background-color: var(--gold-elegant);
+  width: 30px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(201, 169, 97, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .service-carousel-header {
+    padding: 0 50px 25px 50px;
+  }
+
+  .service-carousel-title {
+    font-size: 28px;
+  }
+
+  .service-carousel-icon {
+    font-size: 45px;
+  }
+
+  .carousel-viewport {
+    margin: 0 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-carousel {
+    padding: 30px 0;
+    border-radius: 15px;
+  }
+
+  .service-carousel-header {
+    padding: 0 40px 20px 40px;
+  }
+
+  .service-carousel-title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .service-carousel-description {
+    font-size: 14px;
+  }
+
+  .service-carousel-icon {
+    font-size: 40px;
+  }
+
+  .carousel-container {
+    padding: 0 var(--spacing-md);
+  }
+
+  .carousel-button {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-carousel-header {
+    padding: 0 30px 20px 30px;
+  }
+
+  .service-carousel-title-wrapper {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .service-carousel-title {
+    font-size: 20px;
+  }
+
+  .service-carousel-description {
+    font-size: 13px;
+  }
+
+  .service-carousel-icon {
+    font-size: 36px;
+  }
+
+  /* SOLO 1 imagen en móvil con deslizamiento infinito */
+  .carousel-slide {
+    flex: 0 0 100%;
+    padding: 0;
+  }
+
+  .carousel-viewport {
+    margin: 0 45px;
+  }
+
+  .carousel-button {
+    width: 35px;
+    height: 35px;
+  }
+}
